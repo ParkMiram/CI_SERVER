@@ -17,6 +17,7 @@ jobs:
         key: ${{ secrets.SSH_KEY }}
         port: 22
         script: |
-            cd ${{ github.event.repository.name }}
-            pwd
-            sh deploy-ssh.sh
+            cd ci-server
+            git pull
+            cd build/libs
+            java -jar -Dspring.profiles.active=prod ci-0.0.1-SNAPSHOT.jar
