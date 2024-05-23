@@ -36,7 +36,7 @@ jobs:
         key: ${{ secrets.SSH_KEY }}
         port: 22
         script: |
-            cd ci-server
+            cd CI_SERVER
             git pull
             cd build/libs
             java -jar -Dspring.profiles.active=prod ci-0.0.1-SNAPSHOT.jar
