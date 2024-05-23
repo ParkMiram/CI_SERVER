@@ -16,7 +16,7 @@ class CiApplicationTests {
 	}
 
 	@Test
-	void dbUsernameIsRoot(){
-		Assertions.assertEquals("root",username);
+	void dbUsernameIsSa(){
+		Assertions.assertEquals("sa",username);
 	}
 }
