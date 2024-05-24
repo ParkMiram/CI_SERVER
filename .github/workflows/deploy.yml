@@ -27,14 +27,7 @@ jobs:
 
     - name: Build with Gradle Wrapper
       run: ./gradlew build
-    
-  dependency-submission:
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
-
-    steps:
-    - uses: actions/checkout@v4
+      
     # ssh username@ip
     - name: executing remote ssh commands using password
       uses: appleboy/ssh-action@v1.0.3
