@@ -27,19 +27,6 @@ jobs:
 
     - name: Build with Gradle Wrapper
       run: ./gradlew build
-      
-    - name: cd
-      uses: appleboy/ssh-action@master
-      with:
-        host: ${{ secrets.HOST }} 
-        username: ${{ secrets.USERNAME }}
-        key: ${{ secrets.SSH_KEY }}
-        port: 22
-        script: |
-            cd CI_SERVER
-            git pull
-            cd build/libs
-            java -jar -Dspring.profiles.active=prod ci-0.0.1-SNAPSHOT.jar
     
   dependency-submission:
     runs-on: ubuntu-latest
